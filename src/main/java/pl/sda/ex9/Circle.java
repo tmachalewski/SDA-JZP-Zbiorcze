@@ -1,6 +1,9 @@
 package pl.sda.ex9;
 
-public class Circle {
+import pl.sda.ex10.Movable;
+import pl.sda.ex10.MoveDirection;
+
+public class Circle implements Movable {
     private Point2D center;
     private Point2D point;
 
@@ -40,5 +43,11 @@ public class Circle {
 
         double r = getRadius();
         return Math.PI*r*r;
+    }
+
+    @Override
+    public void move(MoveDirection md) {
+        center.move(md);
+        point.move(md);
     }
 }

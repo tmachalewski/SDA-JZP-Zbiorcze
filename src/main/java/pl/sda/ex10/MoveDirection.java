@@ -1,13 +1,10 @@
-package pl.sda.ex9;
+package pl.sda.ex10;
 
-import pl.sda.ex10.Movable;
-import pl.sda.ex10.MoveDirection;
-
-public class Point2D implements Movable {
+public class MoveDirection {
     private double x;
     private double y;
 
-    public Point2D(double x, double y) {
+    public MoveDirection(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -26,11 +23,5 @@ public class Point2D implements Movable {
 
     public void setY(double y) {
         this.y = y;
-    }
-
-    @Override
-    public void move(MoveDirection md) {
-        this.x=this.x+md.getX();
-        this.y=this.y+md.getY();
     }
 }
