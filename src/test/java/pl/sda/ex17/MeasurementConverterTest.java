@@ -1,4 +1,4 @@
-package pl.sda;
+package pl.sda.ex17;
 
 import org.junit.jupiter.api.Test;
 import pl.sda.ex17.ConversionType;

@@ -1,4 +1,4 @@
 package pl.sda.ex24;
 
-public class BasketEmptyException extends RuntimeException {
+public class BasketEmptyException extends Exception {
 }

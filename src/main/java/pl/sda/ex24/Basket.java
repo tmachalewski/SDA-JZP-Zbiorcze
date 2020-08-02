@@ -3,13 +3,17 @@ package pl.sda.ex24;
 public class Basket {
     int counter=0;
     public void addToBasket(){
-        if(counter==10){
-            throw new BasketFullException();
+        try {
+            if (counter == 10) {
+                throw new BasketFullException();
+            }
+            counter++;
+        }catch (BasketFullException e){
+            System.out.println("Basket is full");
         }
-        counter++;
     }
 
-    public void removeFromBasket(){
+    public void removeFromBasket() throws BasketEmptyException {
         if(counter==0){
             throw new BasketEmptyException();
         }

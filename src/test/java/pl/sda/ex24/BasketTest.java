@@ -26,6 +26,17 @@ public class BasketTest {
     }
 
     @Test
+    public void shouldThrowBasketEmptyException(){
+        Basket b = new Basket();
+        b.addToBasket();
+        try {
+            b.removeFromBasket();
+        } catch (BasketEmptyException e) {
+            fail("There were items to remove");
+        }
+    }
+
+    @Test
     public void shouldAcceoptTenItems(){
         Basket b = new Basket();
         b.addToBasket(); //1
@@ -39,4 +50,6 @@ public class BasketTest {
         b.addToBasket(); //9
         b.addToBasket(); //10
     }
+
+
 }
