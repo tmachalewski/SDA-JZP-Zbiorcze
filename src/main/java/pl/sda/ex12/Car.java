@@ -8,13 +8,15 @@ public class Car {
     private double price;
     private int productionYear;
     private List<Manufacturer> manufacturers;
+    private EngineEnum engine;
 
-    public Car(String name, String model, double price, int productionYear, List<Manufacturer> manufacturers) {
+    public Car(String name, String model, double price, int productionYear, List<Manufacturer> manufacturers, EngineEnum engine) {
         this.name = name;
         this.model = model;
         this.price = price;
         this.productionYear = productionYear;
         this.manufacturers = manufacturers;
+        this.engine = engine;
     }
 
     public String getName() {
@@ -57,6 +59,14 @@ public class Car {
         this.manufacturers = manufacturers;
     }
 
+    public EngineEnum getEngine() {
+        return engine;
+    }
+
+    public void setEngine(EngineEnum engine) {
+        this.engine = engine;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -68,7 +78,8 @@ public class Car {
         if (productionYear != car.productionYear) return false;
         if (name != null ? !name.equals(car.name) : car.name != null) return false;
         if (model != null ? !model.equals(car.model) : car.model != null) return false;
-        return manufacturers != null ? manufacturers.equals(car.manufacturers) : car.manufacturers == null;
+        if (manufacturers != null ? !manufacturers.equals(car.manufacturers) : car.manufacturers != null) return false;
+        return engine == car.engine;
     }
 
     @Override
@@ -81,6 +92,7 @@ public class Car {
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + productionYear;
         result = 31 * result + (manufacturers != null ? manufacturers.hashCode() : 0);
+        result = 31 * result + (engine != null ? engine.hashCode() : 0);
         return result;
     }
 }
