@@ -31,6 +31,12 @@ public class CarServiceTest {
         mans.add(man4);
         CarService cs = new CarService();
 
-        cs.printAllModels(mans);
+        //cs.printAllModels(mans);
+        //cs.printAllCars(mans);
+        //cs.printAllManufacturerNames(mans);
+        //cs.printAllModelsProducedInEvenYear(mans);
+
+        //cs.printAllModelsProducedInEvenYearMethodReferenceVersion(mans);
+        cs.printAllCarsProducedInEvenYearByProducersFoundedInOddYear(mans);
     }
 }
